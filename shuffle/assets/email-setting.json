@@ -1,0 +1,5 @@
+{
+  "API_KEY": "your send grid api key",
+  "FromEmail": "you sender email",
+  "FromName":"you sender name"
+}

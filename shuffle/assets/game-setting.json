@@ -1,0 +1,83 @@
+﻿{
+  "Rule": {
+    "Role2Count": {
+      "Judge": 1,
+      "Wolf": 3,
+      "Prophet": 1,
+      "Witch": 1,
+      "Hunter": 1,
+      "Villager": 7
+    },
+    "JudgeEmail": "John@gmail.com"
+  },
+
+  "Attendees": [
+    {
+      "name": "John",
+      "email": "John@gmail.com"
+    },
+    {
+      "name": "Albert1",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert2",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert3",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert4",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert5",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert6",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert7",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert8",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert9",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert10",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert11",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert12",
+      "email": "Albert@qq.com"
+    },
+    {
+      "name": "Albert13",
+      "email": "Albert@qq.com"
+    }
+  ],
+
+  "RulesDescription": [
+    "Judge",
+    "Wolf每天晚上狼人会残忍的杀害一个村民，到了白天，狼人要假扮村民隐藏自己的身份，故意误导或陷害其他村民，根据参与游戏的人数的不同，可能有1-4个狼人。",
+    "Prophet每天晚上预言家可以查验一民玩家的身份（但是只能告诉你是好人还是狼人，无法知道该人的的身份，是村庄里的灵魂人物。预言家要面对的问题是：如何在帮助其他村民的同时，又尽可能得不被狼人发现自己的身份。",
+    "Witch神秘的女巫有着两瓶药剂。一瓶解药：可以救活一个被狼人杀死的玩家。一瓶毒药：可以毒杀一民玩家。（注：女巫只能第一晚对自己使用解药，在没有解药时，不能得知今晚谁死了）",
+    "Hunter当猎人被狼人杀害或村民处决时，在咽下最后一口气前，他可以开枪射杀任意一个玩家加以报复。但是，如果猎人是由于意外死亡（例如女巫的毒药或殉情而死等），他便不能发动技能。",
+    "Villager本身没有任何能力，唯一的功能是在白天拥有投票权，却要考虑很多事情，村民会接受到真假混杂的信息，如何从中分辨和判断出正确的信息是游戏中最大的难题。"
+  ],
+
+  "GameDescription": "游戏玩家中共包含1个法官，3个狼人，1个先知，1个女巫，1个猎人，7个村民。胜利条件：所有狼人阵亡或者非狼人全部被杀死。"
+}

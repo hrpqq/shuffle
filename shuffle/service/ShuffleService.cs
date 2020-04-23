@@ -16,7 +16,8 @@ namespace shuffle
                 return GetPlayers(rule, shuffledAttendees).ToList();
             }
 
-            var judge = shuffledAttendees.Single(a => a.Email == rule.JudgeEmail);
+            var judge = shuffledAttendees.First(a => a.Email == rule.JudgeEmail);
+            shuffledAttendees.Remove(judge);
             var judgePlayer = new Player(judge, Role.Judge);
             rule.Role2Count.Remove(Role.Judge);
             return GetPlayers(rule, shuffledAttendees)
@@ -33,7 +34,7 @@ namespace shuffle
             return shuffledAttendees.Zip(roles, (attendee, role) => new Player(attendee, role));
         }
 
-        private static IList<T> Shuffle<T>(IList<T> list)
+        public static IList<T> Shuffle<T>(IList<T> list)
         {
             list = list.Select(x => x).ToList();
             var provider = new RNGCryptoServiceProvider();

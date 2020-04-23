@@ -56,6 +56,20 @@ namespace shuffle.models
                 p.RoleDescription = RulesDescription.FirstOrDefault(rd => rd.Contains(p.Role.ToString()));
                 return p;
             }).ToList();
+            players = ShuffleService.Shuffle<Player>(players).ToList();
+            Player.ParentList = players;
+            players.ForEach(p => p.NameNumMapList = string.Join("  ", players.Select(q => 
+            {
+                if (p.Role == Role.Judge)
+                    return $"{players.IndexOf(q)}--{q.Attendee.Name}--{q.Role}";
+                else
+                    return $"{players.IndexOf(q)}--{q.Attendee.Name}";
+            }
+            )));
+            players.ForEach(q => { q.Company = players.Where(p => p.Role == q.Role 
+                                                                    && q.Role == Role.Wolf 
+                                                                    && p.Attendee.Name!=q.Attendee.Name).ToList(); });
+
             return new Game(Round++, players);
         }
     }

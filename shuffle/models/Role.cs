@@ -17,6 +17,8 @@ namespace shuffle.models
         [JsonProperty("Witch")]
         Witch,
         [JsonProperty("Cupid")]
-        Cupid
+        Cupid,
+        [JsonProperty("Guard")]
+        Guard,
     }
 }

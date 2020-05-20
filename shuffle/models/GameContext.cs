@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace shuffle.models
 {
@@ -11,7 +12,7 @@ namespace shuffle.models
         {
             var gameSetting = new GameSettingService().GetSetting();
             Round = round;
-            Attendees = gameSetting.Attendees;
+            Attendees = gameSetting.Attendees.Where(a => a.Available).ToList();
             Rule = gameSetting.Rule;
             RulesDescription = gameSetting.RulesDescription;
             GameDescription = gameSetting.GameDescription;
@@ -58,12 +59,12 @@ namespace shuffle.models
             }).ToList();
             players = ShuffleService.Shuffle<Player>(players).ToList();
             Player.ParentList = players;
-            players.ForEach(p => p.NameNumMapList = string.Join("  ", players.Select(q => 
+            players.ForEach(p => p.NameNumMapList = string.Join("<br>", players.Select(q => 
             {
                 if (p.Role == Role.Judge)
                     return $"{players.IndexOf(q)}--{q.Attendee.Name}--{q.Role}";
                 else
-                    return $"{players.IndexOf(q)}--{q.Attendee.Name}";
+                    return $"{players.IndexOf(q)}--{q.Attendee.Name}  {AddRoleIndecator(players.IndexOf(q))}";
             }
             )));
             players.ForEach(q => { q.Company = players.Where(p => p.Role == q.Role 
@@ -71,6 +72,21 @@ namespace shuffle.models
                                                                     && p.Attendee.Name!=q.Attendee.Name).ToList(); });
 
             return new Game(Round++, players);
+        }
+
+        private string AddRoleIndecator(int index)
+        {
+            var sb_buttons = new StringBuilder();
+            sb_buttons.Append("<br>");
+            sb_buttons.Append("<input type=\"checkbox\" id=\"retainQuestion\">淘汰</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">法官</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">狼人</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">先知</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">猎人</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">守卫</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\">村民</input>");
+            sb_buttons.Append($"<input type=\"radio\" name=\"role{index}\" checked>未知</input>");
+            return sb_buttons.ToString();
         }
     }
 }

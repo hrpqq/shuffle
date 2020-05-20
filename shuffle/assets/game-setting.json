@@ -2,66 +2,65 @@
   "Rule": {
     "Role2Count": {
       "Judge": 1,
-      "Wolf": 4,
-      "Prophet": 1,
-      "Witch": 1,
-      "Hunter": 1,
-      "Guard": 1,
-      "Villager": 4
+      "Wolf": 1,
+      "Prophet": 0,
+      "Witch": 0,
+      "Hunter": 0,
+      "Villager": 0
     },
     "JudgeEmail": "RHao@slb.com"
   },
 
   "Attendees": [
     {
+      "Available": false,
       "name": "Wang Dong",
       "email": "DWang1@slb.com"
     },
     {
+      "Available": false,
       "name": "Zhenning Bao",
       "email": "ZBao@slb.com"
     },
     {
-      "name": "TAN Bolei",
-      "email": "TBolei@slb.com"
+      "Available": false,
+      "name": "Ping XU",
+      "email": "PXu@slb.com"
     },
+
     {
-      "name": "Qi GOU",
-      "email": "QGou@slb.com"
-    },
-    {
-      "name": "Xu FENG",
-      "email": "XFeng13@slb.com"
-    },
-    {
+      "Available": true,
       "name": "Ran Hao",
       "email": "RHao@slb.com"
     },
     {
+      "Available": true,
       "name": "Zhonglin Yang",
       "email": "ZYang25@slb.com"
     },
     {
+      "Available": false,
       "name": "Bo Zhang(BGC)",
       "email": "BZhang26@slb.com"
     },
     {
+      "Available": false,
       "name": "Guanbo WANG",
       "email": "GWang26@slb.com"
     },
+
     {
-      "name": "Hang Su",
-      "email": "HSu2@slb.com"
-    },
-    {
+      "Available": false,
       "name": "Yuqian Fang",
       "email": "YFang4@slb.com"
     },
     {
-      "name": "Ping XU",
-      "email": "PXu@slb.com"
+      "Available": false,
+      "name": "TAN Bolei",
+      "email": "TBolei@slb.com"
     },
     {
+      "Available": false,
       "name": "Hui Zheng",
       "email": "HZheng5@slb.com"
     }
